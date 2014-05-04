@@ -7,7 +7,7 @@ class Target
   property :id, Serial
   property :url, String, :length => 256, :required => true
   property :name, String, :length => 256, :required => true
-  property :span_seconds, Integer, :default => 0, :required => true
+  property :span_seconds, Integer, :required => true
   property :last_attacked_at, DateTime
 
   @@seconds_of_day = 60 * 60 * 24
@@ -16,9 +16,9 @@ class Target
 
   def span=(new_span)
     if new_span.kind_of? Numeric
-      @span_seconds = new_span
+      self.span_seconds = new_span
     else new_span.kind_of? String
-      @span_seconds = new_span.split(/(?<!\d)/).inject(0) { |result, part|
+      self.span_seconds = new_span.split(/(?<!\d)/).inject(0) { |result, part|
         result + case part
         when /^(\d+)d$/
           $1.to_i * @@seconds_of_day
@@ -36,7 +36,7 @@ class Target
   end
 
   def span
-    rest = @span_seconds
+    rest = self.span_seconds
     span_strs = []
     day = (rest / @@seconds_of_day).floor
     if day > 0
