@@ -9,7 +9,18 @@ def attack(target)
     Net::HTTP.start(uri.host, uri.port) do |http|
       http.open_timeout = 2
       http.read_timeout = 2
-      http.head(uri.path + uri.query.nil? ? '' : "?#{uri.query}")
+      path = uri.path
+      if (not uri.query.nil?) and uri.query.kind_of? String
+        path += uri.query
+      end
+      case target.request_method.to_sym
+      when :get
+        http.get(path)
+      when :post
+        http.post(path)
+      when :head
+        http.head(path)
+      end
     end
   rescue Exception
   end

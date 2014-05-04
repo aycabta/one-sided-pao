@@ -16,6 +16,7 @@ end
 
 get '/' do
   @targets = Target.all
+  @request_methods = Target.request_methods
   slim :index
 end
 
@@ -24,6 +25,7 @@ post '/add_target' do
   target.url = params[:url]
   target.name = params[:name]
   target.span = params[:span]
+  target.request_method = params[:request_method]
   target.save!
   redirect '/', 302
 end

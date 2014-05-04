@@ -8,11 +8,17 @@ class Target
   property :url, String, :length => 256, :required => true
   property :name, String, :length => 256, :required => true
   property :span_seconds, Integer, :required => true
+  property :request_method, String, :required => true
   property :last_attacked_at, DateTime
 
   @@seconds_of_day = 60 * 60 * 24
   @@seconds_of_hour = 60 * 60
   @@seconds_of_minute = 60
+  @@request_methods = [:get, :post, :head]
+
+  def self.request_methods
+    @@request_methods
+  end
 
   def span=(new_span)
     if new_span.kind_of? Numeric
