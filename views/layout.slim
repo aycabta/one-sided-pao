@@ -1,0 +1,23 @@
+doctype 5
+html
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title OneSidedPao
+    link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+    script src="//code.jquery.com/jquery-1.11.0.min.js"
+  body
+    .container
+      .navbar.navbar-default
+        .navbar-header
+          button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+            span.icon-bar
+          a.navbar-brand href="#" OneSidedPao
+
+      #content
+        == yield
+
+      hr
+      p = "Powered by #{RUBY_DESCRIPTION}"
+      iframe width="420" height="315" src="//www.youtube.com/embed/a4XySVs1G58" frameborder="0" allowfullscreen
+

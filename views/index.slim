@@ -1,0 +1,26 @@
+form.form-inline action="/add_target" method="POST"
+  input.input-small type="text" name="name" placeholder="name"
+  input.input-small type="text" name="url" placeholder="URL"
+  input.input-small type="text" name="span" placeholder="ex.) 1d2h3m4s"
+  input.input-small.btn type="submit"
+
+hr
+
+table.table.table-bordered.table-condensed.targets
+  thead
+    tr
+      th Name
+      th URL
+      th Span
+      th Delete
+  tbody
+    - for x in @targets
+      tr
+        td.room_id = x.name
+        td.name = x.url
+        td.url = x.span
+        td.delete
+          form.form-inline action="/delete_target" method="POST"
+            input.input-small type="hidden" name="id" value=x.id
+            input.input-small type="submit" name="Delete" value="Delete"
+
