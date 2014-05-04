@@ -7,7 +7,7 @@ class Target
   property :id, Serial
   property :url, String, :length => 256, :required => true
   property :name, String, :length => 256, :required => true
-  property :span_seconds, Integer, :required => true
+  property :span_seconds, Integer, :default => 0, :required => true
   property :last_attacked_at, DateTime
 
   @@seconds_of_day = 60 * 60 * 24
