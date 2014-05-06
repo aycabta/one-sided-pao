@@ -36,3 +36,5 @@ post '/delete_target' do
   redirect '/', 302
 end
 
+rampage
+
