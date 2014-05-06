@@ -32,7 +32,7 @@ end
 
 EM::defer do
   loop do
-    sleep 3
+    sleep 30
     Target.all.each do |target|
       if target.last_attacked_at.nil?
         attack(target)
