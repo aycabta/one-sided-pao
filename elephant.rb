@@ -22,7 +22,11 @@ def attack(target)
         http.head(path)
       end
     end
-  rescue Exception
+  rescue Exception => e
+    puts "#{e.class.name}: #{e.message}"
+    e.backtrace.each do |b|
+      puts "\t from #{b}"
+    end
   end
 end
 
