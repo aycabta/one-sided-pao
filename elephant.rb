@@ -32,7 +32,6 @@ end
 
 EM::defer do
   loop do
-    sleep 30
     Target.all.each do |target|
       if target.last_attacked_at.nil?
         puts "first attack: #{target.id} \"#{target.name}\" #{target.url}"
@@ -46,6 +45,7 @@ EM::defer do
         target.save!
       end
     end
+    sleep 30
   end
 end
 
