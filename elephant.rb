@@ -35,10 +35,12 @@ EM::defer do
     sleep 30
     Target.all.each do |target|
       if target.last_attacked_at.nil?
+        puts "first attack: #{target.id} \"#{target.name}\" #{target.url}"
         attack(target)
         target.last_attacked_at = DateTime.now
         target.save!
       elsif DateTime.now > (target.last_attacked_at.to_time + target.span_seconds).to_datetime
+        puts "#{target.id} \"#{target.name}\" #{target.url}"
         attack(target)
         target.last_attacked_at = (target.last_attacked_at.to_time + target.span_seconds).to_datetime
         target.save!
