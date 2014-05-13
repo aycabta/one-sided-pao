@@ -7,8 +7,7 @@ def attack(target)
   begin
     uri = URI(target.url)
     Net::HTTP.start(uri.host, uri.port) do |http|
-      http.open_timeout = 2
-      http.read_timeout = 2
+      http.read_timeout = 120
       path = uri.path
       if (not uri.query.nil?) and uri.query.kind_of? String
         path += uri.query
