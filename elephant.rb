@@ -49,4 +49,3 @@ def rampage
     end
   end
 end
-

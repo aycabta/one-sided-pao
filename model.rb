@@ -71,4 +71,3 @@ DataMapper.finalize
 def database_upgrade!
   Target.auto_upgrade!
 end
-

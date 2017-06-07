@@ -37,4 +37,3 @@ post '/delete_target' do
 end
 
 rampage
-
