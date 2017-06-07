@@ -16,3 +16,4 @@ group :production do
   gem 'dm-mysql-adapter'
 end
 
+ruby '2.4.1'
