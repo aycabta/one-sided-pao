@@ -1,9 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.2)
+    addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    daemons (1.3.0)
+    daemons (1.3.1)
     data_objects (0.10.17)
       addressable (~> 2.1)
     diff-lcs (1.3)
@@ -25,7 +25,7 @@ GEM
     mustermann (1.0.3)
     public_suffix (3.0.3)
     rack (2.0.6)
-    rack-protection (2.0.4)
+    rack-protection (2.0.5)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -42,10 +42,10 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    sinatra (2.0.4)
+    sinatra (2.0.5)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.4)
+      rack-protection (= 2.0.5)
       tilt (~> 2.0)
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
@@ -73,7 +73,7 @@ DEPENDENCIES
   thin
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.6.1p33
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
